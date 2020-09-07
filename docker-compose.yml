@@ -1,0 +1,45 @@
+version: '3'
+services:
+    apache:
+        build: .docker/apache
+        container_name: mint_software_apache
+        ports:
+          - 8044:80
+        volumes:
+          - .docker/config/vhosts:/etc/apache2/sites-enabled
+          - .:/home/wwwroot/mint_software
+        depends_on:
+          - php
+
+    mysql:
+        image: mysql
+        command: "--default-authentication-plugin=mysql_native_password"
+        container_name: mint_software_mysql
+        ports:
+          - 33060:3306
+        volumes:
+            - .docker/data/db:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: mint_software
+            MYSQL_USER: mint_software
+            MYSQL_PASSWORD: mint_software
+
+    php:
+        build: .docker/php
+        container_name: mint_software_php
+        volumes:
+          - .:/home/wwwroot/mint_software
+        depends_on:
+          - mysql
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: mint_software_phpmyadmin
+        environment:
+          PMA_HOST: mysql
+          PMA_PORT: 33060
+        ports:
+            - 8080:80
+        links:
+            - mysql
