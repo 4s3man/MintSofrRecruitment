@@ -6,18 +6,54 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
-          <h1 class="mt-5">Recruitment Task</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt voluptates rerum eveniet sapiente repellat esse, doloremque quod recusandae deleniti nostrum assumenda vel beatae sed aut modi nesciunt porro quisquam voluptatem.</p>          
-        </div>
-        <div class="col-12">      
-          <a href="{{ path('sign_up')}}" class="btn btn-success">
-            Sing-up
-          </a>
-          <a href="{{ path('app_login') }}" class="btn btn-primary">
-            Sign In
-          </a>
-        </div>        
+       
+       <div class="col-6">
+        <div>
+            <h1>Recruitment task 2</h1>       
+            <a href="{{ path('sign_up')}}" class="btn btn-success">
+              Sing-up
+            </a>
+            <a href="{{ path('app_login') }}" class="btn btn-primary">
+              Sign In
+            </a>
+          </div>
+
+          <div class="mt-5">
+            <h1>About</h1>
+            <p>
+              I've made 2 task's in one project, mostly due to the <b>think out of the box</b> part of the task.
+            </p>
+            <p>
+              Dont forget to check out unit tests. I did not made functional ones, but i just wanted you to know that i like testing.
+            </p>
+            <p><b>I hope you enjoy! :)</b></p>
+          </div>        
+        </div>    
+
+        <div class="col-lg-6">   
+          <p>
+          <b> User Story 1:</b>
+            <cite>
+              As a user, I want to see an option to either sign in or sign up, so I can access application with my account 
+              Acceptance criteria: 
+              - User should see sign in screen with input data fields for 1) 
+              Username 2) Password - User should see an option to Sign-up if they don't have an 
+              account created - clicking on this option will route user to the Sign-in screen - User with disabled account should not sign in - Signed in User should be redirect to restricted part of 
+              application - Signed in User should see logout option 
+            </cite>
+          </p>
+          <p>
+          <b> User Story 2:</b>
+            <cite>
+               As a signed in User, I want to see paginated list of all application users, where I can disable each application account. 
+              Acceptance criteria 
+              - User should see paginated list with maximum 10 rows with 
+              columns 1) username and 2) action - User should see disable button which is active for enabled 
+              users, and disabled for disabled users. - User should be able to paginate over the list. 
+            </cite>
+          </p>
+        </div>   
+
       </div>
     </div>
   </section>

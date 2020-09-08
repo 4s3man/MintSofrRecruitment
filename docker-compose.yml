@@ -38,7 +38,7 @@ services:
         container_name: mint_software_phpmyadmin
         environment:
           PMA_HOST: mysql
-          PMA_PORT: 33060
+          PMA_PORT: 3306
         ports:
             - 8080:80
         links:

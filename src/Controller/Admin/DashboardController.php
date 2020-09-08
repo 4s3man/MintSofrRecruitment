@@ -32,6 +32,7 @@ class DashboardController extends AbstractDashboardController
     {
         return [
             MenuItem::linkToCrud('Users', 'fa fa-user', User::class),
+            MenuItem::linkToLogout('Logout', 'fa fa-exit'),
         ];
     }
 }

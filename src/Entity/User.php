@@ -14,6 +14,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface
 {
+    const ROLE_ACTIVE_USER = 'ROLE_ACTIVE_USER';
+    const ROLE_USER = 'ROLE_USER';
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -23,6 +26,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank()
      */
     private $username;
 
@@ -70,9 +74,11 @@ class User implements UserInterface
      */
     public function getRoles(): array
     {
+        $this->isFromDbAndIsActive() ?
+            $this->addActiveUserRole() : $this->removeActiveUserRole();
+
         $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        $roles[] = self::ROLE_USER;
 
         return array_unique($roles);
     }
@@ -116,7 +122,7 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getActive(): ?bool
+    public function isActive(): bool
     {
         return $this->active;
     }
@@ -126,5 +132,22 @@ class User implements UserInterface
         $this->active = $active;
 
         return $this;
+    }
+
+    private function removeActiveUserRole(): void
+    {
+        $this->setRoles(
+            array_filter($this->roles, fn (string $role) => $role !== User::ROLE_ACTIVE_USER)
+        );
+    }
+
+    private function addActiveUserRole(): void
+    {
+        $this->roles[] = User::ROLE_ACTIVE_USER;
+    }
+
+    private function isFromDbAndIsActive(): bool
+    {
+        return $this->getId() && $this->isActive();
     }
 }

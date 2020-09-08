@@ -7,13 +7,17 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <style>
             body {
-                background: url('http://placehold.it/1920x1080') no-repeat center center fixed;
+                background: url('https://www.mintsoftware.pl/wp-content/uploads/2019/06/o_nas_1920x1080.jpg') no-repeat center center fixed;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 background-size: cover;
                 -o-background-size: cover;
                 padding-top:70px;
-                }
+                color:white !important;
+                },
+            .btn {
+                color: white !important;
+            }
         </style>
         {% endblock %}
     </head>
@@ -22,6 +26,15 @@
 
         <section >
             <div class="container">
+                
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="flash-{{ label }} alert alert-{{ label }}" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+
                 {% block body %}
                 
                 {% endblock %}

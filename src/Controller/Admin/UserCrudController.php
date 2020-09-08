@@ -5,8 +5,9 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class UserCrudController extends AbstractCrudController
@@ -19,15 +20,22 @@ class UserCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions
-        ->disable(Action::NEW, Action::DELETE, Action::EDIT);
+        ->setPermission(Action::EDIT, User::ROLE_ACTIVE_USER)
+        ->disable(Action::NEW, Action::DELETE);
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setPaginatorPageSize(10);
     }
 
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('username'),
-            TextField::new('password'),
+            TextField::new('username')->onlyOnIndex(),
+            BooleanField::new('active')
+            ->setLabel('Action'),
         ];
     }
 }
