@@ -1,5 +1,5 @@
 # MintSoftwareRecruitment 
-2 tasks made for Mint Software Recruitment 
+2 tasks made for Mint Software Recruitment
 
 ## Installation
 Assuming you have docker and docker-compose installed
@@ -12,6 +12,10 @@ cd MintSoftwareRecruitment && \
 make install    
 ```
 In your favourite browser go to http://localhost:8044/
+
+## Default users credentials
+user user
+disabledUser disabledUser
 
 ## Maybe you would like to heck the code in online IDE?
 https://www.gitpod.io/#git@github.com:4s3man/MintSofrRecruitment.git
