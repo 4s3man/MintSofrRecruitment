@@ -18,7 +18,7 @@ user user
 disabledUser disabledUser
 
 ## Maybe you would like to heck the code in online IDE?
-https://www.gitpod.io/#git@github.com:4s3man/MintSofrRecruitment.git
+https://www.gitpod.io/#https://github.com/4s3man/MintSoftwareRecruitment
 
 
 ## License
