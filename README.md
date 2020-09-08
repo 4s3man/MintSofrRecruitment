@@ -2,22 +2,21 @@
 2 tasks made for Mint Software Recruitment 
 
 ## Installation
+Assuming you have docker and docker-compose installed
+Make sure you are not running anything on ports: 8044, 30060, 8080
 
-
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+Run
+```
+    git clone git@github.com:4s3man/MintSoftwareRecruitment.git MintSoftwareRecruitment
+    cd MintSoftwareRecruitment
+    make install    
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+## Running tests
+Naavigate to app folder and run
+```
+    make tests
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
