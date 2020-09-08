@@ -14,7 +14,7 @@ Run
 In your favourite browser go to http://localhost:8044/
 
 ## Running tests
-Naavigate to app folder and run
+Navigate to app folder and run
 ```
     make tests
 ```
