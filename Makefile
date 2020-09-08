@@ -7,7 +7,7 @@ install:
 	make test
 
 test:
-	docker container exec -t mint_software_php php ./bin/phpunit
+	docker container exec -t mint_software_php php ./vendor/bin/phpunit
 
 run:
 	docker-compose up
