@@ -1,14 +1,8 @@
-# Foobar
-
-Foobar is a Python library for dealing with word pluralization.
+# MintSoftwareRecruitment 
+2 tasks made for Mint Software Recruitment 
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
 
 ## Usage
 
