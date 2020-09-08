@@ -2,7 +2,7 @@
 2 tasks made for Mint Software Recruitment.
 - Install project
 - Task 2 will be visible on the default site
-- View of task 1 will in top menu under 'Recruitment task 1' and in folder src/TreeEnricher and under path tests/TreeEnricherTest.php
+- View task 1 in top menu under 'Recruitment task 1' paths src/TreeEnricher tests/TreeEnricherTest.php
 
 ## Installation
 Assuming you have docker and docker-compose installed
