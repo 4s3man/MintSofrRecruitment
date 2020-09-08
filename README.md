@@ -15,9 +15,9 @@ make install
 In your favourite browser go to http://localhost:8044/
 
 ## Default users credentials
-user user
-
-disabledUser disabledUser
+Username, Password
+user, user
+disabledUser, disabledUser
 
 ## Maybe you would like to check the code in online IDE?
 https://www.gitpod.io/#https://github.com/4s3man/MintSoftwareRecruitment
