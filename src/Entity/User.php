@@ -137,7 +137,7 @@ class User implements UserInterface
     private function removeActiveUserRole(): void
     {
         $this->setRoles(
-            array_filter($this->roles, fn (string $role) => $role !== User::ROLE_ACTIVE_USER)
+            array_filter($this->roles, fn (string $role) => User::ROLE_ACTIVE_USER !== $role)
         );
     }
 
