@@ -40,10 +40,5 @@ RUN echo "dev ALL=(ALL) ALL" > /etc/sudoers
 
 WORKDIR /home/wwwroot/mint_software
 
-#Install app
-RUN composer install && \
-    php ./home/wwwroot/mint_software/bin/console doctr:mig:migrate -n && \
-    php ./home/wwwroot/mint_software/bin/console doctr:fixtures:load -n
-
 EXPOSE 9000
 CMD ["php-fpm"]
